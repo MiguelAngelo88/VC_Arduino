@@ -1,0 +1,19 @@
+
+from cvzone.SerialModule import SerialObject
+
+arduino = SerialObject("COM5")
+
+def led(total):
+    if total==0:
+        arduino.sendData([0,0,0,0,0])
+    elif total==1:
+        arduino.sendData([1, 0, 0, 0,0])
+    elif total==2:
+        arduino.sendData([1, 1, 0, 0,0])
+    elif total==3:
+        arduino.sendData([1, 1, 1, 0,0])
+    elif total==4:
+        arduino.sendData([1, 1, 1, 1,0])
+    elif total == 5:
+        arduino.sendData([1, 1, 1, 1,1])
+
